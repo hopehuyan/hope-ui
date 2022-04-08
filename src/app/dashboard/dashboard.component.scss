@@ -1,0 +1,29 @@
+.menu-layout {
+  position: fixed;
+  width: 300px;
+  height: calc(100vh - 9rem);
+  z-index: 999;
+  overflow-y: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  top: 6rem;
+  left: 0rem;
+  transition: transform .2s,left .2s;
+  background-color: var(--surface-overlay);
+  padding: 1.5rem;
+  box-shadow: 0 3px 5px #00000005, 0 0 2px #0000000d, 0 1px 4px #00000014;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  padding: 7rem 2rem 2rem 4rem;
+  transition: margin-left .2s;
+  margin-left: 300px;
+}
+
+.lay {
+  flex: 1 1 auto;
+}
