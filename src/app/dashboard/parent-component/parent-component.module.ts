@@ -6,6 +6,7 @@ import {SidebarModule} from "primeng/sidebar";
 import {TabMenuModule} from "primeng/tabmenu";
 import {ParentRoutingMoudle} from "./parent-routing.moudle";
 import {ChildComponentModule} from "./child-component/child-component.module";
+import {RippleDemoModule} from "./ripple-demo/ripple-demo.module";
 
 
 
@@ -20,7 +21,8 @@ import {ChildComponentModule} from "./child-component/child-component.module";
     SidebarModule,
     TabMenuModule,
     ParentRoutingMoudle,
-    ChildComponentModule
+    ChildComponentModule,
+    RippleDemoModule
   ]
 })
 export class ParentComponentModule { }
