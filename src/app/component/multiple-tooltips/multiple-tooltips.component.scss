@@ -1,0 +1,9 @@
+:host ::ng-deep {
+    .p-button {
+        padding: 0 !important;
+    }
+
+    .p-overlay-panel {
+        border-radius: 0 !important;
+    }
+}

@@ -1,0 +1,19 @@
+<div *ngIf="length > 1">
+    <button class="linkage-btn"
+            pButton
+            #button
+            label="Multiple({{length}})"
+            (click)="finalTemplate.toggle($event)"
+            style="background-color: transparent; border: 0; outline: none;color:#22527b;"
+    ></button>
+  <div>
+    <vcp-overlay-panel #finalTemplate
+                    appendTo="body">
+      <ng-container *ngTemplateOutlet="template"></ng-container>
+    </vcp-overlay-panel>
+  </div>
+</div>
+
+<div *ngIf="length === 1">
+  <ng-container *ngTemplateOutlet="template"></ng-container>
+</div>
