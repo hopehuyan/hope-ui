@@ -1,0 +1,30 @@
+<div>
+  <ng-template #simpleTemplate>
+    <div *ngIf="templateData.length > 1">
+      <div *ngFor="let alone of templateData">
+          <div *ngIf="alone.value.length > 0">
+            <div *ngIf="valueLength > 1"
+                 style="text-align: left; padding-bottom: 5px; padding-top: 5px">{{alone.text}}</div>
+            <div *ngFor="let single of alone.value">
+              <li style="text-align: left;" *ngIf="valueLength > 1">{{single}}</li>
+              <div *ngIf="valueLength === 1">{{single}}</div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div *ngIf="templateData.length === 1">
+      <div *ngFor="let alone of templateData">
+      <div *ngFor="let single of alone.value">
+        <li style="text-align: left;" *ngIf="valueLength > 1">{{single}}</li>
+        <div *ngIf="valueLength === 1">{{single}}</div>
+      </div>
+    </div>
+    </div>
+  </ng-template>
+  <app-multiple-tooltips
+      [template]="simpleTemplate"
+      [length]="valueLength"
+      [trigger]="trigger"
+  ></app-multiple-tooltips>
+</div>
+
