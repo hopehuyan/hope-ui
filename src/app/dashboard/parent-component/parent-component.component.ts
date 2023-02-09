@@ -14,12 +14,8 @@ export class ParentComponentComponent implements OnInit {
       routerLink: ['/dashboard/home/table']
     },
     {
-      label: 'About',
+      label: 'Ripple',
       routerLink: ['/dashboard/home/ripple']
-    },
-    {
-      label: 'Test-data',
-      routerLink: ['/dashboard/home/test-data']
     }
   ];
   constructor() { }

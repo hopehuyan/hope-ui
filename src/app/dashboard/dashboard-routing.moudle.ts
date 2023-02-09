@@ -11,6 +11,10 @@ const routes: Routes = [
         path: 'home',
         loadChildren: () => import('./parent-component/parent-component.module').then(m => m.ParentComponentModule)
       },
+      {
+        path: 'test-data',
+        loadChildren: () => import('./test-data/test-data.module').then(m => m.TestDataModule)
+      }
     ]
   },
 

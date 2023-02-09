@@ -2,8 +2,8 @@
   <div>
     <ul>
       <li *ngFor="let item of items">
-        <a [routerLink]="item.linkUrl" class="p-d-flex" routerLinkActive="active-menuitem-routerlink">
-          <i [ngClass]="item.icon ? item.icon : ''" ></i><span>{{item.name}}</span>
+        <a [routerLink]="item.url" class="p-d-flex" routerLinkActive="active-menuitem-routerlink">
+          <i [ngClass]="item.icon ? item.icon : ''" ></i><span>{{item.label}}</span>
           </a>
     </ul>
   </div>

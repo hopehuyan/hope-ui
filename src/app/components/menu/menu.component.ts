@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { MenuItem } from "primeng/api";
 
 @Component({
   selector: 'app-menu',
@@ -7,27 +8,21 @@ import { Router } from "@angular/router";
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  items:any[] = [
+  items:MenuItem[] = [
     {
-      name: 'Home',
-      linkUrl: '/dashboard/home',
+      label: 'Home',
+      url: '/dashboard/home',
       icon: 'pi pi-home'
     },
     {
-      name: 'About',
-      linkUrl: '/about'
+      label: 'Test Data',
+      url: '/dashboard/test-data',
+      icon: 'pi pi-link'
     },
     {
-      name: 'Contact',
-      linkUrl: '/contact'
-    },
-    {
-      name: 'Login',
-      linkUrl: '/login'
-    },
-    {
-      name: 'Register',
-      link: '/register'
+      label: 'Others',
+      url: '/contact',
+      icon: 'pi pi-ellipsis-h'
     }
   ];
   constructor(private router: Router) { }
