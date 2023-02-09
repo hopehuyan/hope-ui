@@ -18,8 +18,8 @@ export class ParentComponentComponent implements OnInit {
       routerLink: ['/dashboard/home/ripple']
     },
     {
-      label: 'Contact',
-      routerLink: ['/dashboard/home/table']
+      label: 'Test-data',
+      routerLink: ['/dashboard/home/test-data']
     }
   ];
   constructor() { }

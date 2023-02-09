@@ -1,16 +1,10 @@
-<div class="menu-layout" style="background: antiquewhite">
-  <p>menu works!</p>
+<div class="menu-layout">
   <div>
     <ul>
-      <li>
-        <a [routerLink]="['/dashboard/home']">Home</a>
-      </li>
-      <li>
-        <a [routerLink]="['/about']">About</a>
-      </li>
-      <li>
-        <a [routerLink]="['/contact']">Contact</a>
-      </li>
+      <li *ngFor="let item of items">
+        <a [routerLink]="item.linkUrl" class="p-d-flex" routerLinkActive="active-menuitem-routerlink">
+          <i [ngClass]="item.icon ? item.icon : ''" ></i><span>{{item.name}}</span>
+          </a>
     </ul>
   </div>
 </div>

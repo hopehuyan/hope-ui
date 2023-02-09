@@ -5,3 +5,40 @@
   margin-bottom: 0.5rem;
   font-size: .875rem;
 }
+
+.menu-layout li {
+  list-style-type: none;
+
+  a {
+    display: inline-flex;
+    padding: 10px 15px;
+    color: var(--text);
+    width: 100%;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    &:hover {
+      background: #eef1f7;
+    }
+  }
+
+  span {
+    padding-left: 20px;
+
+  }
+
+}
+
+.menu-layout ul {
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.active-menuitem-routerlink {
+  background: #eef1f7;
+
+}
