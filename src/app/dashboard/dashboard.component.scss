@@ -1,16 +1,16 @@
 .menu-layout {
   position: fixed;
-  width: 300px;
-  height: calc(100vh - 9rem);
-  z-index: 999;
+  width: 260px;
+  height: calc(100vh - 3rem);
+  z-index: 0;
   overflow-y: auto;
   -webkit-user-select: none;
   user-select: none;
-  top: 6rem;
+  top: 3rem;
   left: 0rem;
-  transition: transform .2s,left .2s;
+  transition: transform 0.2s, left 0.2s;
   background-color: var(--surface-overlay);
-  padding: 1.5rem;
+  padding: 1.5rem 0;
   box-shadow: 0 3px 5px #00000005, 0 0 2px #0000000d, 0 1px 4px #00000014;
 }
 
@@ -27,3 +27,4 @@
 .lay {
   flex: 1 1 auto;
 }
+

@@ -7,11 +7,12 @@ import {TabMenuModule} from "primeng/tabmenu";
 import {ParentRoutingMoudle} from "./parent-routing.moudle";
 import {ChildComponentModule} from "./child-component/child-component.module";
 import {RippleDemoModule} from "./ripple-demo/ripple-demo.module";
+import { TestDataComponent } from './test-data/test-data.component';
 
 
 
 @NgModule({
-  declarations: [ParentComponentComponent],
+  declarations: [ParentComponentComponent, TestDataComponent],
   exports: [
     ParentComponentComponent
   ],

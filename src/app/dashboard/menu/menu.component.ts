@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-menu',
@@ -10,19 +10,20 @@ export class MenuComponent implements OnInit {
   items:any[] = [
     {
       name: 'Home',
-      link: '/home'
+      linkUrl: '/dashboard/home',
+      icon: 'pi pi-home'
     },
     {
       name: 'About',
-      link: '/about'
+      linkUrl: '/about'
     },
     {
       name: 'Contact',
-      link: '/contact'
+      linkUrl: '/contact'
     },
     {
       name: 'Login',
-      link: '/login'
+      linkUrl: '/login'
     },
     {
       name: 'Register',
