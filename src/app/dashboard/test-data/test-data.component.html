@@ -1,1 +1,32 @@
-<p>test-data works!</p>
+<div class="grid">
+  <div class="col-4">
+    <p-button label="Get Holiday" (onClick)="getCityData()"></p-button>
+  </div>
+  <div class="col-4">
+    <p-button label="Get Weather"></p-button>
+  </div>
+  <div class="col-4">
+    <p-button label="Get Day"></p-button>
+  </div>
+</div>
+<div #holidayElement *ngIf="holidayModels.length">
+  <p-table [value]="holidayModels">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Holiday Name</th>
+        <th>Date</th>
+        <th>Lunar Date</th>
+        <th>Lunar Holiday</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-holidayModel>
+      <tr>
+        <td>{{holidayModel.holidayName}}</td>
+        <td>{{holidayModel.date}}</td>
+        <td>{{holidayModel.lunarDate}}</td>
+        <td>{{holidayModel.lunarHoliday}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<p-blockUI [blocked]="loading"></p-blockUI>

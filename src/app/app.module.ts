@@ -9,6 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import {ParentComponentModule} from "./dashboard/parent-component/parent-component.module";
 import {DashboardModule} from "./dashboard/dashboard.module";
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import {DashboardModule} from "./dashboard/dashboard.module";
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
