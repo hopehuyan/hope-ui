@@ -2,9 +2,17 @@
   <div>
     <ul>
       <li *ngFor="let item of items">
-        <a [routerLink]="item.url" class="p-d-flex" routerLinkActive="active-menuitem-routerlink">
-          <i [ngClass]="item.icon ? item.icon : ''" ></i><span>{{item.label}}</span>
-          </a>
+        <a [routerLink]="item.url" class="p-d-flex" routerLinkActive="active-menuitem-routerlink" (click)="onMenuClick(item)">
+          <i [ngClass]="item.icon ? item.icon : ''"></i><span>{{item.label}}</span>
+        </a>
+        <ng-container *ngIf="item.items && item.expanded">
+          <ul>
+            <li *ngFor="let child of item.items">
+              <a [routerLink]="child.url" class=" sub-menu p-d-flex" routerLinkActive="active-menuitem-routerlink" >
+                <i [ngClass]="child.icon ? child.icon : ''"></i><span>{{child.label}}</span>
+              </a>
+          </ul>
+        </ng-container>
     </ul>
   </div>
 </div>
