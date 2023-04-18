@@ -6,6 +6,7 @@ import { TestDataComponent } from './test-data.component';
 import { ButtonModule } from "primeng/button";
 import { TableModule } from "primeng/table";
 import { BlockUIModule } from "primeng/blockui";
+import { InputNumberModule } from "primeng/inputnumber";
 
 
 @NgModule({

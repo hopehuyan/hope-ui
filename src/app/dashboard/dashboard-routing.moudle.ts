@@ -14,6 +14,10 @@ const routes: Routes = [
       {
         path: 'test-data',
         loadChildren: () => import('./test-data/test-data.module').then(m => m.TestDataModule)
+      },
+      {
+        path: 'test-component',
+        loadChildren: () => import('./test-component/test-component.module').then(m => m.TestComponentModule)
       }
     ]
   },
