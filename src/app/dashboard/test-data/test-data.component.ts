@@ -8,8 +8,9 @@ import { HolidayModel } from "../../common/models/holiday.model";
   styleUrls: ['./test-data.component.scss'],
 })
 export class TestDataComponent implements OnInit {
-  holidayModels:  HolidayModel[] = [];
+  holidayModels: HolidayModel[] = [];
   loading = false;
+
   constructor(private readonly _freeApiService: FreeApiService) {
   }
 
@@ -19,8 +20,9 @@ export class TestDataComponent implements OnInit {
   getCityData() {
     this.loading = true;
     this._freeApiService.getCityData().subscribe(res => {
-      this.holidayModels = res.data;
-      this.loading = false;
-    });
+        this.holidayModels = res.data;
+        this.loading = false;
+      },
+      () => this.loading = false);
   }
 }

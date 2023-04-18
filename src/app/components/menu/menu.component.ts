@@ -20,9 +20,9 @@ export class MenuComponent implements OnInit {
       icon: 'pi pi-link'
     },
     {
-      label: 'Others',
-      url: '/contact',
-      icon: 'pi pi-ellipsis-h'
+      label: 'PrimeNG Component',
+      url: '/dashboard/test-component',
+      icon: 'pi pi-ellipsis-h',
     }
   ];
   constructor(private router: Router) { }

@@ -1,0 +1,134 @@
+<div class="grid" *ngIf="!dynamic">
+  <div class="col-12" style="display: flex">
+    <div class="col-4">
+      <div style="margin-bottom: 20px">
+        Test for Integer Only
+      </div>
+
+      <p-inputNumber
+        [placeholder]="'IntegerOnly'"
+      >
+      </p-inputNumber>
+    </div>
+    <div class="col-4">
+      <div style="margin-bottom: 20px">
+        Test for 浮点
+      </div>
+
+      <p-inputNumber
+        [placeholder]="'fudian'"
+        [minFractionDigits]="0"
+        [maxFractionDigits]="2"
+      >
+      </p-inputNumber>
+    </div>
+    <div class="col-4">
+      <div style="margin-bottom: 20px">
+        Test for Min-Max Boundaries
+      </div>
+      <p-inputNumber
+        [placeholder]="'Min-Max Boundaries'"
+        [mode]="'decimal'"
+        [min]="0"
+        [max]="100"
+      ></p-inputNumber>
+    </div>
+  </div>
+
+  <div class="col-12" style="display: flex">
+    <div class="col-4">
+      <div style="margin-bottom: 20px">
+        Test for Currency
+      </div>
+      <p-inputNumber
+        [placeholder]="'Currency'"
+        [mode]="'currency'"
+        [currency]="'USD'"
+      ></p-inputNumber>
+    </div>
+    <div class="col-4">
+      <div style="margin-bottom: 20px">
+        Test for Percent
+      </div>
+      <p-inputNumber
+        [placeholder]="'Percent'"
+        [prefix]="'%'"
+      ></p-inputNumber>
+    </div>
+    <div class="col-4">
+      <div style="margin-bottom: 20px">
+        Test for Min-Max Boundaries with button
+      </div>
+      <p-inputNumber
+        [placeholder]="'Min-Max Boundaries with button'"
+        mode="decimal"
+        [showButtons]="true"
+        inputId="minmax-buttons"
+        [min]="0"
+        [max]="100"
+      ></p-inputNumber>
+    </div>
+  </div>
+
+  <div class="col-12" style="display: flex">
+    <div class="col-4">
+      <div style="margin-bottom: 20px">
+        Test for Stacked
+      </div>
+      <p-inputNumber
+        [placeholder]="'Stacked'"
+        [showButtons]="true"
+        [minFractionDigits]="2"
+        [maxFractionDigits]="2"
+      ></p-inputNumber>
+    </div>
+    <div class="col-4">
+      <div style="margin-bottom: 20px">
+        Test for Horizontal with Step
+      </div>
+      <p-inputNumber
+        [placeholder]="'Test for Stacked'"
+        [showButtons]="true"
+        buttonLayout="horizontal"
+        mode="currency"
+        currency="EUR"
+      ></p-inputNumber>
+    </div>
+  </div>
+</div>
+
+<div class="gird" *ngIf="dynamic">
+  <div class="col-12">
+    <H3>Business Component</H3>
+    <div class="grid">
+      <div class="col-4" *ngFor="let item of inputNumberConfigs.business">
+        <div style="margin-bottom: 20px">
+          {{item.config.label}}
+        </div>
+        <p-inputNumber
+          (onInput)="onInputTouched($event)"
+        ></p-inputNumber>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <H3>Common Component</H3>
+    <div class="grid">
+      <div class="col-4" *ngFor="let item of inputNumberConfigs.common">
+        <div style="margin-bottom: 20px">
+          {{item.config.label}}
+        </div>
+        <p-inputNumber
+          #inputNumber
+          dckControlConfigurator
+          [attributes]="item['config']"
+        ></p-inputNumber>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+
