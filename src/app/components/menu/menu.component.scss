@@ -35,11 +35,13 @@
 }
 
 .menu-layout ul {
-  margin: 10px 0 0 0;
   padding: 0;
 }
 
 .active-menuitem-routerlink {
   background: #eef1f7;
+}
 
+.sub-menu {
+  padding: 10px 15px 10px 50px !important;
 }

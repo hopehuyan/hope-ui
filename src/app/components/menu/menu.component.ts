@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from "@angular/router";
 import { MenuItem } from "primeng/api";
 
@@ -8,7 +8,7 @@ import { MenuItem } from "primeng/api";
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  items:MenuItem[] = [
+  items: MenuItem[] = [
     {
       label: 'Home',
       url: '/dashboard/home',
@@ -21,12 +21,37 @@ export class MenuComponent implements OnInit {
     },
     {
       label: 'PrimeNG Component',
-      url: '/dashboard/test-component',
       icon: 'pi pi-ellipsis-h',
+      items: [
+        {
+          label: 'Input Number',
+          icon: 'pi pi-link',
+          url: '/dashboard/test-component',
+        },
+      ]
     }
   ];
-  constructor(private router: Router) { }
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
+    this.items.forEach(item => {
+        item.items?.map(child => {
+          if (this.router.url.indexOf(String(child.url)) === 0) {
+            item.expanded = true;
+          }
+        });
+        if (this.router.url.indexOf(String(item.url)) === 0) {
+          item.expanded = true;
+        }
+      }
+    );
+  }
+
+  onMenuClick(item: MenuItem): void {
+    item.expanded = !item.expanded;
+
+    this.items.filter(res => res.url !== item.url).forEach(item => item.expanded = false);
   }
 }
